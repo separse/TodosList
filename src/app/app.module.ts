@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { MatSliderModule } from '@angular/material/slider';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,8 +17,12 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { HeaderComponent } from './header/header.component';
-
-
+import { AboutComponent } from './about/about.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { TodoComponent } from './todo/todo.component';
+import { AddTodoComponent } from './add-todo/add-todo.component';
+import { TodosService } from './todos.service';
 
 
 @NgModule({
@@ -26,7 +31,12 @@ import { HeaderComponent } from './header/header.component';
       AssignmentsComponent,
       SubmittedDirective,
       UnsubmittedDirective,
-      HeaderComponent
+      HeaderComponent,
+      AboutComponent,
+      TodoListComponent,
+      NotFoundComponent,
+      TodoComponent,
+      AddTodoComponent
    ],
    imports: [
       BrowserModule,
@@ -39,9 +49,12 @@ import { HeaderComponent } from './header/header.component';
       MatSelectModule,
       MatDatepickerModule,
       MatNativeDateModule,
-      MatInputModule
+      MatInputModule,
+      HttpClientModule
    ],
-   providers: [],
+   providers: [
+     TodosService
+   ],
    bootstrap: [
       AppComponent
    ]

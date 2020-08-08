@@ -1,6 +1,11 @@
 #dark {
-  background-color: black;
-  color: white;
+  background-color: #212024;
+  color: #e9e6f0;
   text-align: center;
-  padding: .5em;
+  padding: .7em;
+}
+
+a {
+  text-decoration: none;
+  color: #d5d3db;
 }
