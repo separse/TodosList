@@ -8,8 +8,10 @@ import { Todos } from '../todos';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
-  todos;
-  constructor(private todosService: TodosService) { }
+
+  todos: Todos[];
+
+  constructor(private todosService: TodosService) {}
 
   ngOnInit(): void {
     this.todosService.todo.subscribe(todo => this.todos = todo);
@@ -17,5 +19,11 @@ export class TodoListComponent implements OnInit {
 
   onDelete(e: Todos) {
     this.todos = this.todos.filter(t => t.id !== e.id);
+    this.todosService.deleteTodo(e).subscribe();
     }
+
+    addTodo(todo: Todos) {
+      this.todosService.addTodo(todo).subscribe(tod => this.todos.push(tod));
   }
+
+}

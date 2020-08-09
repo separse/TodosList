@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Todos } from '../todos';
 import { TodosService } from '../todos.service';
 
@@ -13,7 +13,7 @@ export class TodoComponent {
   @Output() deleteTodo: EventEmitter<Todos> = new EventEmitter();
   checked = false;
 
-  constructor(private todosService: TodosService) { }
+  constructor(private todosService: TodosService) {}
 
   toggleCheck() {
     this.checked = !this.checked;
